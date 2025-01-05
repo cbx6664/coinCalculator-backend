@@ -37,6 +37,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and push Docker image
+        working-directory: /home/runner/work/coinCalculator-backend/coinCalculator-backend
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           IMAGE_NAME: ${{ secrets.IMAGE_NAME }}
