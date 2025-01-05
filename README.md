@@ -28,7 +28,8 @@ Output:
 
 [0.01, 0.01, 0.01, 1, 1, 5]
 
- 
+
+
 - Example 2:
 
 Input:
@@ -40,3 +41,31 @@ Coin denominator: [1, 2, 50]
 Output: 
 
 [1, 2, 50, 50]
+
+
+# usage of Code
+
+## Environment
+
+- Java 22
+- ARM64
+
+```zsh
+  mvn clean package
+```
+
+```zsh
+    # build ARM64 docker image
+    docker build -t coin-backend-service:latest --load .
+    
+    # build AMD64 docker image
+    docker buildx build --platform linux/amd64 -t coin-backend-service:latest --load .
+```
+
+```zsh
+    # run the image
+    docker run -d \
+  --name coin-backend-service \
+  -p 8080:8080 \
+ coin-backend-service:latest
+```
