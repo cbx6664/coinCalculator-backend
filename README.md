@@ -15,8 +15,8 @@ A list of minimum number of coins in ascending order
 
 You can assume that you have infinite number of coins for each denomination
 
- 
-Example 1:
+
+- Example 1:
 
 Input:
 
@@ -29,7 +29,7 @@ Output:
 [0.01, 0.01, 0.01, 1, 1, 5]
 
  
-Example 2:
+- Example 2:
 
 Input:
 
