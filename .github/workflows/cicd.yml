@@ -59,9 +59,9 @@ jobs:
       - name: Deploy to server
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
-          docker pull $DOCKER_USERNAME/$IMAGE_NAME:$TAG
-          docker stop $IMAGE_NAME || true
-          docker rm $IMAGE_NAME || true
-          docker run -d --name $IMAGE_NAME -p 8080:8080 $DOCKER_USERNAME/$IMAGE_NAME:$TAG
+          docker pull ${{ secrets.DOCKER_USERNAME}}/${{ secrets.IMAGE_NAME}}:${{ secrets.TAG}}
+          docker stop ${{ secrets.IMAGE_NAME}} || true
+          docker rm ${{ secrets.IMAGE_NAME}} || true
+          docker run -d --name ${{ secrets.IMAGE_NAME}} -p 8080:8080 ${{ secrets.DOCKER_USERNAME}}/${{ secrets.IMAGE_NAME}}:${{ secrets.TAG}}
           EOF
 
