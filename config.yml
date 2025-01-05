@@ -1,0 +1,18 @@
+serviceName: "Coin Calculator Service"
+defaultCurrency: "SGD"
+
+server:
+  applicationContextPath: /api
+  applicationConnectors:
+    - type: http
+      port: 8080
+      bindHost: 0.0.0.0
+  adminConnectors:
+    - type: http
+      port: 8081
+      bindHost: 127.0.0.1
+
+logging:
+  level: INFO
+  appenders:
+    - type: console
