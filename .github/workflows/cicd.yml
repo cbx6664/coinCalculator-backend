@@ -20,7 +20,9 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Maven
-        run: mvn clean package
+        run:
+          ls -la .
+          mvn clean package
 
   docker:
     needs: build
