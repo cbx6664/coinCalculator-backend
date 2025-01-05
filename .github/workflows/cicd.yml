@@ -23,6 +23,7 @@ jobs:
         run: |
           ls -la .
           mvn clean package
+          ls -la .
 
   docker:
     needs: build
